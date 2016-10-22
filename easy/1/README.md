@@ -10,7 +10,7 @@ for extra credit, have the program log this information in a file to be accessed
 
 # Solutions
 
-[java](/java)
-[python](/python)
-[ruby](/ruby)
-[javascript](/javascript)
+- [java](/java)
+- [python](/python)
+- [ruby](/ruby)
+- [javascript](/javascript)
