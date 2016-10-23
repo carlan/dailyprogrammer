@@ -4,7 +4,8 @@ Solutions for [easy](/easy), [intermediate](/intermediate) and [hard](/hard) cha
 
 ## Index of solutions
 
-- [\[easy\] challenge #1](/easy/1)
+- [\[easy\] challenge #1](/easy/1/)
+- [\[easy\] challenge #2](/easy/2/)
 
 ## LICENSE
 
