@@ -6,7 +6,7 @@ EXTRA CREDIT: make the calculator have multiple functions! Not only should it be
 
 # Solutions
 
-- [java](/java)
-- [python](/python)
-- [ruby](/ruby)
-- [javascript](/javascript)
+- [java](java/)
+- [python](python/)
+- [ruby](ruby/)
+- [javascript](javascript/)
