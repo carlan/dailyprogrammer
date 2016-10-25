@@ -13,12 +13,20 @@ __status__ = "Development"
 
 class Calculator(object):
 	def addition(self, n1, n2):
+		print("Addition n1={} and n2={}".format(n1,n2))
+		print("result={}".format(eval("n1+n2")))
 		return n1+n2
 	def subtraction(self, n1, n2):
+		print("Subtraction n1={} and n2={}".format(n1,n2))
+		print("result={}".format(eval("n1-n2")))
 		return n1-n2
 	def multiplication(self, n1, n2):
+		print("Multiplication n1={} and n2={}".format(n1,n2))
+		print("result={}".format(eval("n1*n2")))
 		return n1*n2
 	def division(self, n1, n2):
+		print("Division n1={} and n2={}".format(n1,n2))
+		print("result={}".format(eval("n1/n2")))
 		return n1/n2
 
 calc = Calculator()
