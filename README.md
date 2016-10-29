@@ -6,6 +6,7 @@ Solutions for [easy](/easy), [intermediate](/intermediate) and [hard](/hard) cha
 
 - [\[easy\] challenge #1](/easy/1/)
 - [\[easy\] challenge #2](/easy/2/)
+- [\[easy\] challenge #3](/easy/3/)
 
 ## LICENSE
 
