@@ -20,11 +20,9 @@ class CaesarCipher(object):
 				if symbol.islower():
 					shifted = (symbol_number - 97 + key) % 26 + 97
 					result += chr(shifted)
-					#print("symbol={}, symbol_number={}, symbol_number-97={}, shift 1={}".format(symbol, symbol_number, symbol_number-97, chr(shifted)))
 				if symbol.isupper():
 					shifted = (symbol_number - 65 + key) % 26 + 65
 					result += chr(shifted)
-					#print("symbol={}, symbol_number={}, symbol_number-65={}, shift 1={}".format(symbol, symbol_number, symbol_number-65, chr(shifted)))
 			else:
 				result += symbol
 		return result
@@ -37,21 +35,25 @@ class CaesarCipher(object):
 				if symbol.islower():
 					shifted = (symbol_number - 97 - key) % 26 + 97
 					result += chr(shifted)
-					#print("symbol={}, symbol_number={}, symbol_number-97={}, shift 1={}".format(symbol, symbol_number, symbol_number-97, chr(shifted)))
 				if symbol.isupper():
 					shifted = (symbol_number - 65 - key) % 26 + 65
 					result += chr(shifted)
-					#print("symbol={}, symbol_number={}, symbol_number-65={}, shift 1={}".format(symbol, symbol_number, symbol_number-65, chr(shifted)))
 			else:
 				result += symbol
 		return result
 
 caesar = CaesarCipher()
-enc_lowercase = caesar.encrypt(1, 'The first step is you have to say that you can.')
-enc_uppercase = caesar.encrypt(1, 'THE FIRST STEP IS YOU HAVE TO SAY THAT YOU CAN.')
+quote_lowercase = 'The first step is you have to say that you can.'
+quote_uppercase = quote_lowercase.upper()
 
-print(enc_lowercase)
-print(enc_uppercase)
+enc_lowercase = caesar.encrypt(1, quote_lowercase)
+enc_uppercase = caesar.encrypt(1, quote_uppercase)
+dec_lowercase = caesar.decrypt(1, enc_lowercase)
+dec_uppercase = caesar.decrypt(1, enc_uppercase)
 
-print(caesar.decrypt(1, enc_lowercase))
-print(caesar.decrypt(1, enc_uppercase))
+print( "Quote (lowercase): {}".format(quote_lowercase) )
+print( "Quote (uppercase): {}".format(quote_uppercase) )
+print( "Encrypted (lowercase): {}".format(enc_lowercase) )
+print( "Encrypted (uppercase): {}".format(enc_uppercase) )
+print( "Decrypted (lowercase): {}".format(dec_lowercase) )
+print( "Decrypted (uppercase): {}".format(dec_uppercase) )

@@ -17,11 +17,9 @@ class CaesarCipher
                 if symbol.match(/^[[:lower:]]$/)
                     shifted = (symbol.ord - 97 + key) % 26 + 97
 					result += shifted.chr
-                    #puts "symbol=#{symbol}, symbol_number=#{symbol.ord}, symbol_number-97=#{symbol.ord - 97}, shift 1=#{shifted.chr}"
                 elsif symbol.match(/^[[:upper:]]$/)
                     shifted = (symbol.ord - 65 + key) % 26 + 65
 					result += shifted.chr
-                    #puts "symbol=#{symbol}, symbol_number=#{symbol.ord}, symbol_number-65=#{symbol.ord - 65}, shift 1=#{shifted.chr}"
                 end
             else
                 result += symbol
@@ -37,11 +35,9 @@ class CaesarCipher
                 if symbol.match(/^[[:lower:]]$/)
                     shifted = (symbol.ord - 97 - key) % 26 + 97
 					result += shifted.chr
-                    #puts "symbol=#{symbol}, symbol_number=#{symbol.ord}, symbol_number-97=#{symbol.ord - 97}, shift 1=#{shifted.chr}"
                 elsif symbol.match(/^[[:upper:]]$/)
                     shifted = (symbol.ord - 65 - key) % 26 + 65
 					result += shifted.chr
-                    #puts "symbol=#{symbol}, symbol_number=#{symbol.ord}, symbol_number-65=#{symbol.ord - 65}, shift 1=#{shifted.chr}"
                 end
             else
                 result += symbol
@@ -52,12 +48,17 @@ class CaesarCipher
 end
 
 caesar = CaesarCipher.new
+quote_lowercase = 'The first step is you have to say that you can.'
+quote_uppercase = quote_lowercase.upcase
 
-enc_lowercase = caesar.encrypt(1,'The first step is you have to say that you can.')
-enc_uppercase = caesar.encrypt(1, 'THE FIRST STEP IS YOU HAVE TO SAY THAT YOU CAN.')
+enc_lowercase = caesar.encrypt(1, quote_lowercase)
+enc_uppercase = caesar.encrypt(1, quote_uppercase)
+dec_lowercase = caesar.decrypt(1, enc_lowercase)
+dec_uppercase = caesar.decrypt(1, enc_uppercase)
 
-puts enc_lowercase
-puts enc_uppercase
-
-puts caesar.decrypt(1, enc_lowercase)
-puts caesar.decrypt(1, enc_uppercase)
+puts "Quote (lowercase): #{quote_lowercase}"
+puts "Quote (uppercase): #{quote_uppercase}"
+puts "Encrypted (lowercase): #{enc_lowercase}"
+puts "Encrypted (uppercase): #{enc_uppercase}"
+puts "Decrypted (lowercase): #{dec_lowercase}"
+puts "Decrypted (uppercase): #{dec_uppercase}"
