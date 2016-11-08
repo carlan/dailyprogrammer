@@ -7,26 +7,20 @@
 // Copyright: Copyright (c) 2016
 // License: MIT
 
+const Config = require('./config');
+
 class PasswordGenerator {
 
     constructor(amount) {
+        this.config = new Config();
         this.amount = amount;
     }
 
     generate() {
-        let TEMPLATE = 'sldlswswswsldls';
-
-        let LEGEND = {
-            "s": '!@$%^&*-_+=:|~?/.;',
-            "d": '0123456789',
-            "w": 'sister offense temporary sock finish experience issue mouth position deck seminar begin live blonde impound foot ambiguity smile breed lung'.split(' '),
-            "l": 'abcdefghijklmnoprstuvwxyz'
-        };
-
         let passwords = [];
 
-        LEGEND.w.forEach(function(word) {
-            let word_index = LEGEND.w.indexOf(word);
+        this.config.legend.w.forEach(function(word) {
+            let word_index = this.config.legend.w.indexOf(word);
 
             for(let letter of word) {
                 let letter_index = word.indexOf(letter);
@@ -34,20 +28,20 @@ class PasswordGenerator {
                 word = word.substr(0, letter_index) + rand_case + word.substr(letter_index + 1);
             }
 
-            LEGEND.w[word_index] = word;
-        });
+            this.config.legend.w[word_index] = word;
+        }, this);
 
-        for(let letter of LEGEND.l) {
-            let letter_index = LEGEND.l.indexOf(letter);
+        for(let letter of this.config.legend.l) {
+            let letter_index = this.config.legend.l.indexOf(letter);
             let rand_case = [letter.toUpperCase(), letter][Math.round(Math.random())];
-            LEGEND.l = LEGEND.l.substr(0, letter_index) + rand_case + LEGEND.l.substr(letter_index + 1);
+            this.config.legend.l = this.config.legend.l.substr(0, letter_index) + rand_case + this.config.legend.l.substr(letter_index + 1);
         }
 
         for (let i = 0; i < this.amount; i++) {
             let password = '';
-            for(let letter of TEMPLATE) {
-                let sorteable = LEGEND[letter];
-                let picked = sorteable[Math.round(Math.random() * sorteable.length)];
+            for(let letter of this.config.template) {
+                let sorteable = this.config.legend[letter];
+                let picked = sorteable[Math.round(Math.random() * (sorteable.length - 1))];
                 password+=picked;
             }
             passwords.push(password);
