@@ -4,10 +4,10 @@ Solutions for [easy](/easy), [intermediate](/intermediate) and [hard](/hard) cha
 
 ## Index of solutions
 
-- [\[easy\] challenge #1](/easy/1/)
-- [\[easy\] challenge #2](/easy/2/)
-- [\[easy\] challenge #3](/easy/3/)
-- [\[easy\] challenge #4](/easy/4/)
+- [\[easy\] challenge #1 - String interpolation](/easy/1/)
+- [\[easy\] challenge #2 - Calculator](/easy/2/)
+- [\[easy\] challenge #3 - Caesar cipher](/easy/3/)
+- [\[easy\] challenge #4 - Password generator](/easy/4/)
 
 ## LICENSE
 
