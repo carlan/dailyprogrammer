@@ -8,6 +8,8 @@ Solutions for [easy](/easy), [intermediate](/intermediate) and [hard](/hard) cha
 - [\[easy\] challenge #2 - Calculator](/easy/2/)
 - [\[easy\] challenge #3 - Caesar cipher](/easy/3/)
 - [\[easy\] challenge #4 - Password generator](/easy/4/)
+- [\[easy\] challenge #5 - Password protected](/easy/5/)
+- [\[easy\] challenge #6 - Calculate PI](/easy/6/)
 
 ## LICENSE
 
